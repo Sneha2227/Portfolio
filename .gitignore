@@ -1,0 +1,13 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary screenshots / logs
+*.log
+screenshot*.png
+dumped_dom.html
+
+# Local subfolders if any
+NST_Portfolio/
+Portfolio/
+

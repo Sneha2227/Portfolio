@@ -1,0 +1,333 @@
+/**
+ * ==============================================================================
+ * DIGITAL UNIVERSE — RESPONSIVE ADAPTATIONS & ACCESSIBILITY
+ * ==============================================================================
+ * Multi-device breakpoints, mobile navigation drawer, touch ergonomics,
+ * and prefers-reduced-motion accessibility rules.
+ * ==============================================================================
+ */
+
+/* ==============================================================================
+   1. TABLET & MEDIUM DESKTOPS (<= 1024px)
+   ============================================================================== */
+@media (max-width: 1024px) {
+  :root {
+    --nav-height: 70px;
+  }
+
+  .about-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-card:last-child {
+    grid-column: span 2;
+  }
+
+  .about-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tech-skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-section-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* ==============================================================================
+   2. TABLET & LARGE PHONES (<= 768px)
+   ============================================================================== */
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 64px;
+  }
+
+  /* Mobile Navigation Drawer */
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  .nav-links-list {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--nav-height));
+    background: rgba(4, 7, 20, 0.96);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.35s var(--ease-cinematic);
+    border-top: 1px solid var(--border-glass);
+    z-index: 999;
+  }
+
+  .nav-links-list.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-link {
+    font-size: 1.25rem;
+  }
+
+  .nav-container {
+    padding: 0 0.5rem;
+  }
+
+  .btn-sound-toggle {
+    padding: 0.35rem 0.55rem;
+  }
+
+  .btn-sound-toggle .audio-label {
+    display: none;
+  }
+
+  .btn-terminal-trigger {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.68rem;
+  }
+
+  .btn-terminal-trigger .terminal-key-badge {
+    display: none;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding-top: calc(var(--nav-height) + 1.25rem);
+    padding-bottom: 2rem;
+  }
+
+  .hero-status-pill {
+    padding: 0.35rem 0.85rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-status-divider, .hero-sub-status {
+    display: none;
+  }
+
+  .hero-name-title {
+    font-size: clamp(1.85rem, 8.8vw, 2.7rem);
+    white-space: nowrap;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-role-wrapper {
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .hero-desired-role {
+    font-size: clamp(0.82rem, 3.4vw, 1rem);
+    line-height: 1.35;
+    padding: 0 0.5rem;
+    text-align: center;
+  }
+
+  .hero-specialty-badge {
+    font-size: 0.68rem;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+    padding: 0.3rem 0.65rem;
+    max-width: 90%;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.05rem, 4.2vw, 1.35rem);
+    line-height: 1.35;
+    padding: 0 0.75rem;
+    margin-bottom: 0.85rem;
+    max-width: 340px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.86rem;
+    line-height: 1.5;
+    padding: 0 0.75rem;
+    margin-bottom: 1.5rem;
+    max-width: 330px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    max-width: 260px;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .cosmic-btn {
+    width: 100%;
+  }
+
+  /* Grid Conversions */
+  .about-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card:last-child {
+    grid-column: span 1;
+  }
+
+  .tech-skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .beyond-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Journey Timeline */
+  .journey-timeline::before {
+    left: 18px;
+  }
+
+  .timeline-item {
+    gap: 1.25rem;
+  }
+
+  .timeline-marker {
+    width: 38px;
+    height: 38px;
+  }
+
+  .marker-dot {
+    width: 16px;
+    height: 16px;
+  }
+
+  .timeline-content {
+    padding: 1.5rem;
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Modal */
+  .modal-window {
+    padding: 1.75rem;
+    max-height: 90vh;
+  }
+
+  /* Terminal HUD */
+  #terminal-hud {
+    width: 100vw;
+    height: 70vh;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+
+  /* Back to Top */
+  #back-to-top-btn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 46px;
+    height: 46px;
+  }
+
+  /* Footer */
+  .footer-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ==============================================================================
+   3. SMALL MOBILE PHONES (<= 480px)
+   ============================================================================== */
+@media (max-width: 480px) {
+  .site-container {
+    padding: 0 1rem;
+  }
+
+  .universe-section {
+    padding: 4.5rem 0;
+  }
+
+  .section-heading-group {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+  }
+
+  .brand-subtext {
+    display: none;
+  }
+
+  .brand-title {
+    font-size: 0.95rem;
+  }
+
+  .nav-right-actions {
+    gap: 0.4rem;
+  }
+
+  .hero-name-title {
+    font-size: clamp(2rem, 9.2vw, 2.6rem);
+    white-space: nowrap;
+  }
+
+  .about-stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .email-display-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-copy-email {
+    justify-content: center;
+  }
+
+  .contact-form-card {
+    padding: 1.5rem;
+  }
+}
+
+/* ==============================================================================
+   4. ACCESSIBILITY — PREFERS-REDUCED-MOTION
+   ============================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  #preloader {
+    display: none !important;
+  }
+
+  #cursor-dot, #cursor-glow {
+    display: none !important;
+  }
+}
+

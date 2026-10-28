@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Primary Meta Tags -->
+  <title>Sneha Singh | First-Year CSE Student & Creative Technologist</title>
+  <meta name="title" content="Sneha Singh | Beyond The Code — Digital Universe">
+  <meta name="description" content="Personal digital universe of Sneha Singh, a first-year Computer Science Engineering student exploring algorithmic logic, creative frontend engineering, and futuristic web experiences.">
+  <meta name="keywords" content="Sneha Singh, Computer Science, CSE Portfolio, First Year CSE, Software Engineer, Frontend Developer, Web Designer, Digital Universe">
+  <meta name="author" content="Sneha Singh">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts Preconnect & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="is-loading">
+
+  <!-- 1. FULLSCREEN BACKGROUND UNIVERSE CANVAS -->
+  <canvas id="universe-canvas" aria-hidden="true"></canvas>
+
+  <!-- 2. CUSTOM CURSOR (DESKTOP) -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- 3. ANIMATED PRELOADER SCREEN -->
+  <aside id="preloader" role="status" aria-live="polite">
+    <div class="preloader-core">
+      <div class="preloader-orb-ring">
+        <div class="preloader-ring-spin"></div>
+        <div class="preloader-glow-dot"></div>
+      </div>
+      <div class="preloader-percent" id="loader-percent">0%</div>
+      <div class="preloader-status-text" id="loader-status">INITIALIZING DIGITAL UNIVERSE...</div>
+    </div>
+  </aside>
+
+  <!-- 4. NAVIGATION BAR (GLASSMORPHIC STICKY HUD) -->
+  <header class="main-navigation" id="main-nav">
+    <div class="site-container nav-container">
+      <!-- Brand Monogram -->
+      <a href="#hero" class="brand-monogram" aria-label="Sneha Singh Universe Home">
+        <div class="brand-core-symbol">S</div>
+        <div class="brand-text-group">
+          <span class="brand-title" id="brand-name">Sneha Singh</span>
+          <span class="brand-subtext">Beyond The Code</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links-list" id="nav-menu-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#tech-stack" class="nav-link">Arsenal</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#journey" class="nav-link">Journey</a></li>
+          <li><a href="#beyond" class="nav-link">Beyond</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="nav-right-actions">
+        <!-- Procedural Audio Synthesizer Toggle -->
+        <button class="btn-sound-toggle" id="audio-toggle-btn" aria-label="Toggle Procedural Cosmic Audio">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+          <span class="audio-label">AUDIO: OFF</span>
+        </button>
+
+        <!-- Command Deck Terminal Trigger -->
+        <button class="btn-terminal-trigger terminal-trigger" aria-label="Open Command Terminal HUD">
+          <span>HUD</span>
+          <span class="terminal-key-badge">~</span>
+        </button>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="mobile-nav-toggle" id="mobile-menu-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 5. MAIN CONTENT SHELL -->
+  <main class="universe-content">
+
+    <!-- ==============================================================================
+         HERO SECTION — UNFORGETTABLE FULL-SCREEN LANDING
+         ============================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-inner-wrapper">
+        
+        <!-- Live-feeling Terminal Status Indicator -->
+        <div class="hero-status-pill">
+          <span class="status-pulse-dot" aria-hidden="true"></span>
+          <span class="hero-status-text" id="hero-status-label">STATUS: BUILDING MY FUTURE...</span>
+          <span class="hero-status-divider" aria-hidden="true">//</span>
+          <span class="hero-sub-status" id="hero-sub-status">CORE: LEARNING CS // LEVEL: 01 // LATENCY: 12ms</span>
+        </div>
+
+        <!-- Prominently Centered Name -->
+        <div class="hero-name-container">
+          <h1 class="hero-name-title" id="hero-name">Sneha Singh</h1>
+        </div>
+
+        <!-- Desired Position & Specialty Badge -->
+        <div class="hero-role-wrapper">
+          <h2 class="hero-desired-role" id="hero-desired-role">First-Year Computer Science Engineering Student</h2>
+          <span class="hero-specialty-badge" id="hero-specialty-badge">Aspiring Software Engineer & Creative Technologist</span>
+        </div>
+
+        <!-- Bold Headline -->
+        <h2 class="hero-headline" id="hero-tagline">
+          I'M NOT JUST LEARNING TO CODE. <span class="hero-headline-highlight">I'M LEARNING TO CREATE.</span>
+        </h2>
+
+        <!-- Short Subtitle -->
+        <p class="hero-subtitle" id="hero-subtitle">
+          First-year CSE student stepping into the digital universe — exploring algorithmic logic, modern web architecture, and creative problem-solving.
+        </p>
+
+        <!-- Two CTA Buttons -->
+        <div class="hero-cta-group">
+          <a href="#about" class="cosmic-btn btn-primary" id="cta-explore-btn">
+            <span>Explore My Universe</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#projects" class="cosmic-btn btn-secondary" id="cta-projects-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+            <span>View My Projects</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Small Animated Scroll Indicator -->
+      <a href="#about" class="hero-scroll-indicator" aria-label="Scroll down to About section">
+        <div class="scroll-mouse-icon">
+          <div class="scroll-wheel-dot"></div>
+        </div>
+        <span>ORBIT SCROLL</span>
+      </a>
+    </section>
+
+    <!-- ==============================================================================
+         A. ABOUT ME — "THE HUMAN BEHIND THE SCREEN"
+         ============================================================================== -->
+    <section class="universe-section" id="about">
+      <div class="site-container">
+        
+        <header class="section-heading-group">
+          <span class="section-badge">ABOUT SNEHA</span>
+          <h2 class="section-title">THE HUMAN BEHIND THE SCREEN</h2>
+          <p class="section-description">
+            A look into why I chose Computer Science Engineering, how I approach problem solving, and what drives my continuous learning.
+          </p>
+        </header>
+
+        <!-- Story Cards Grid (Hydrated dynamically from data) -->
+        <div class="about-cards-grid" id="about-cards-grid"></div>
+
+        <!-- Quick Highlight Chips Row -->
+        <div class="about-stats-row" id="about-stats-row"></div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         B. TECH STACK — "TOOLS IN MY INVENTORY"
+         ============================================================================== -->
+    <section class="universe-section" id="tech-stack">
+      <div class="site-container">
+        
+        <header class="section-heading-group">
+          <span class="section-badge">TECH ARSENAL</span>
+          <h2 class="section-title">TOOLS IN MY INVENTORY</h2>
+          <p class="section-description">
+            Transparent, genuine proficiencies across programming languages, web technologies, and developer tools. No exaggerated expert claims — just honest, active growth.
+          </p>
+        </header>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs-row" id="tech-filter-tabs"></div>
+
+        <!-- Tech Skills Grid (Hydrated from data) -->
+        <div class="tech-skills-grid" id="tech-skills-grid"></div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         C. PROJECT LAB — "IDEAS TURNED INTO REALITY"
+         ============================================================================== -->
+    <section class="universe-section" id="projects">
+      <div class="site-container">
+        
+        <header class="section-heading-group">
+          <span class="section-badge">PROJECT LAB</span>
+          <h2 class="section-title">IDEAS TURNED INTO REALITY</h2>
+          <p class="section-description">
+            Interactive software, algorithm visualizers, and systems experiments. Each project includes transparent architecture notes and key engineering lessons.
+          </p>
+        </header>
+
+        <!-- Category Filters -->
+        <div class="filter-tabs-row" id="project-filter-tabs"></div>
+
+        <!-- Projects Grid (Hydrated from data) -->
+        <div class="projects-grid" id="projects-grid"></div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         D. MY LEARNING JOURNEY — "LEVELING UP"
+         ============================================================================== -->
+    <section class="universe-section" id="journey">
+      <div class="site-container">
+        
+        <header class="section-heading-group">
+          <span class="section-badge">LEVELING UP</span>
+          <h2 class="section-title">MY LEARNING JOURNEY</h2>
+          <p class="section-description">
+            A game-inspired RPG quest timeline tracking my evolution from writing my first lines of C to unraveling complex algorithms and web architectures.
+          </p>
+        </header>
+
+        <!-- RPG Leveling Timeline (Hydrated from data) -->
+        <div class="journey-timeline" id="journey-timeline"></div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         E. BEYOND THE SCREEN
+         ============================================================================== -->
+    <section class="universe-section" id="beyond">
+      <div class="site-container">
+        
+        <header class="section-heading-group">
+          <span class="section-badge">HUMAN DIMENSION</span>
+          <h2 class="section-title">BEYOND THE SCREEN</h2>
+          <p class="section-description">
+            The ideas, hobbies, and creative fascinations that inspire my curiosity and give balance to technical engineering.
+          </p>
+        </header>
+
+        <!-- Beyond Cards Grid (Hydrated from data) -->
+        <div class="beyond-cards-grid" id="beyond-cards-grid"></div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================================================
+         F. CONTACT — "LET'S BUILD SOMETHING"
+         ============================================================================== -->
+    <section class="universe-section" id="contact">
+      <div class="site-container">
+        
+        <header class="section-heading-group">
+          <span class="section-badge">GET IN TOUCH</span>
+          <h2 class="section-title">LET'S BUILD SOMETHING</h2>
+          <p class="section-description">
+            Have an exciting opportunity, a collaborative idea, or want to discuss computer science, algorithms, and cosmic frontiers? Send a signal!
+          </p>
+        </header>
+
+        <div class="contact-section-inner">
+          
+          <!-- Contact Channels Info Panel -->
+          <div class="contact-info-panel">
+            <p class="contact-lead-text">
+              I am always eager to connect with fellow students, engineers, educators, and tech innovators.
+            </p>
+            <p class="contact-sub-text">
+              Whether it's discussing a project, exploring mentorship, or simply sharing insights on modern development — my communications link is always open.
+            </p>
+
+            <!-- Direct Email Display Card with 1-Click Copy -->
+            <div class="contact-direct-card">
+              <span class="direct-card-label">DIRECT INBOX ACCESS</span>
+              <div class="email-display-row">
+                <a href="mailto:snehasingh.dev@example.com" class="email-address-text" id="direct-email-link" title="Send direct email to Sneha">
+                  <span id="contact-email-text">snehasingh.dev@example.com</span>
+                </a>
+                <button class="btn-copy-email" id="copy-email-btn" aria-label="Copy email address to clipboard">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <span class="btn-label">Copy</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Social Links Deck -->
+            <div class="social-links-deck">
+              <a href="#" id="contact-github-link" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span class="social-item-name">GitHub Repository</span>
+                <span class="social-item-handle" id="contact-github-handle">@SnehaSingh-dev</span>
+              </a>
+
+              <a href="#" id="contact-linkedin-link" target="_blank" rel="noopener noreferrer" class="social-link-item">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                <span class="social-item-name">LinkedIn Profile</span>
+                <span class="social-item-handle" id="contact-linkedin-handle">Connect</span>
+              </a>
+            </div>
+
+            <div class="response-pledge-badge" id="response-pledge">
+              ⚡ Average response time: Within 24-48 hours
+            </div>
+          </div>
+
+          <!-- Interactive Signal Transmission Form -->
+          <div class="glass-card contact-form-card">
+            <h3 class="form-header-title">Transmit a Signal</h3>
+            <p class="form-header-subtitle">SYSTEM: DIRECT ENCRYPTED DISPATCH</p>
+
+            <form class="cosmic-form" id="cosmic-contact-form">
+              <div class="form-group">
+                <label for="form-sender-name" class="form-label">Your Name</label>
+                <input type="text" id="form-sender-name" class="cosmic-input" placeholder="e.g. Alex Morgan" required autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label for="form-sender-email" class="form-label">Your Email Coordinates</label>
+                <input type="email" id="form-sender-email" class="cosmic-input" placeholder="alex@domain.com" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="form-sender-message" class="form-label">Message Payload</label>
+                <textarea id="form-sender-message" class="cosmic-textarea" rows="4" placeholder="Share your message, project idea, or opportunity..." required></textarea>
+              </div>
+
+              <button type="submit" class="cosmic-btn btn-primary btn-transmit">
+                <span class="submit-text">Transmit Signal to Sneha</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+
+              <div id="form-feedback-message" class="feedback-box" role="alert"></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================================================================
+       6. INTERACTIVE PROJECT BLUEPRINT MODAL
+       ============================================================================== -->
+  <div id="project-modal" class="project-modal-container" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-window">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Project Blueprint Modal">✕</button>
+      <div id="modal-dynamic-content">
+        <!-- Injected dynamically via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================================================
+       7. INTERACTIVE EASTER EGG TERMINAL HUD DECK
+       ============================================================================== -->
+  <aside id="terminal-hud" role="region" aria-label="Interactive Command HUD" aria-hidden="true">
+    <div class="terminal-header-bar">
+      <div class="terminal-title-group">
+        <span class="terminal-status-light" aria-hidden="true"></span>
+        <span class="terminal-deck-title">SNEHA_UNIVERSE // COMMAND_DECK v1.4</span>
+      </div>
+      <div class="terminal-window-controls">
+        <button class="term-btn" id="terminal-close-btn" title="Close Terminal HUD" aria-label="Close HUD">✕</button>
+      </div>
+    </div>
+
+    <!-- Output scroll stream -->
+    <div class="terminal-body" id="terminal-output" tabindex="0"></div>
+
+    <!-- Interactive command line -->
+    <div class="terminal-prompt-row">
+      <span class="terminal-prompt-indicator">sneha@orbit:~$</span>
+      <input type="text" id="terminal-input" class="terminal-cmd-input" placeholder="Type 'help', 'warp', or 'whoami'..." autocomplete="off" spellcheck="false">
+    </div>
+  </aside>
+
+  <!-- ==============================================================================
+       8. BACK TO TOP RADIAL PROGRESS CONTROL
+       ============================================================================== -->
+  <button id="back-to-top-btn" aria-label="Back to Top">
+    <svg class="radial-progress-svg" viewBox="0 0 100 100">
+      <circle class="progress-track" cx="50" cy="50" r="45"></circle>
+      <circle class="progress-fill" id="scroll-progress-ring" cx="50" cy="50" r="45"></circle>
+    </svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ==============================================================================
+       9. FOOTER
+       ============================================================================== -->
+  <footer class="universe-footer">
+    <div class="site-container footer-inner">
+      <div class="footer-top-row">
+        <div class="footer-brand">
+          <span class="footer-title" id="footer-name">Sneha Singh</span>
+          <span class="footer-subtitle">First-Year CSE Student • Beyond The Code</span>
+        </div>
+
+        <div class="footer-telemetry">
+          <div class="telemetry-item">
+            <span class="telemetry-dot"></span>
+            <span id="footer-sector">SECTOR 01 // ORBIT ACTIVE</span>
+          </div>
+          <div class="telemetry-item">
+            <span id="footer-live-time">00:00:00 LOCAL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <p>© 2026 Sneha Singh. Engineered with clean semantic HTML, modern CSS & vanilla JavaScript.</p>
+        <button class="footer-easteregg-link" id="btn-warp-easteregg">⚡ Trigger Hyperdrive Warp</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Scripts -->
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/universe-canvas.js"></script>
+  <script src="js/audio-synth.js"></script>
+  <script src="js/terminal-hud.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
